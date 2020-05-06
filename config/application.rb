@@ -15,5 +15,7 @@ module Meshiterro
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+    Refile.store ||= Refile::Backend::FileSystem.new("/tmp/uploads/store".to_s)
+	Refile.cache ||= Refile::Backend::FileSystem.new("/tmp/uploads/cache".to_s)
   end
 end
