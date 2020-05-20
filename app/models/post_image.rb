@@ -5,7 +5,7 @@ class PostImage < ApplicationRecord
 	has_many :favorites, dependent: :destroy
 	validates :shop_name, presence: true
 	validates :image, presence: true
-	def favorited_by?(user)
+	def favorited_by?(user)    # true か false を返す
 		favorites.where(user_id: user.id).exists?
 	end
 end
